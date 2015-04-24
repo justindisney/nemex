@@ -1,14 +1,13 @@
 ## nemex
 
-This is the official repository for nemex – a tiny app that helps you to track and curate ideas and projects. It’s self-hosted and based on markdown.
+[UNOFFICIAL] A tiny app to track and curate ideas and projects. It’s self-hosted and based on markdown.    
 
 More info: [nemex.io](http://nemex.io)
 
 
 ### About the development
 
-This repository marks the beginning of a complete rewrite. Currently, all the PHP sources have been re-written from scratch and the JavaScript sources have been cleaned up a bit. Further clean up of the JavaScript sources, image assets and HTML markup will follow.
-
+The official nemex project doesn't seem to be getting much attention, so this project is intended to make general improvements to nemex for anyone who might find it useful.
 
 ### Usage
 
