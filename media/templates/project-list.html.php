@@ -4,7 +4,14 @@
 
 <div class="project-list">
     
-    <?php if ($dir_exists) { ?><div id="addProject"></div><?php } ?>
+    <?php if ($dir_exists) { ?>
+        <div id="addProject"></div>
+    <?php } else { ?>
+        <div class="content no-projects-warning">
+            <h1>No Project Directory!</h1>
+            <p>A <i><?php print CONFIG::PROJECTS_PATH ?></i> directory must exist, with permissions set to <i><?php print sprintf("%04o", CONFIG::FILE_CREATION_MODE); ?></i>.</p>
+        </div>
+    <?php } ?>    
     <form class="addProjectForm">
         <div><input type="text" name="name" id="newProject" placeholder="Project name:"/></div>
         <div><button type="submit" id="np" ></button></div>
@@ -34,23 +41,13 @@
     <?php } ?>
 </div>
 
-<?php if (empty($projects)) { 
-        if ($dir_exists) {
-    ?> 
+<?php if (empty($projects) && $dir_exists) { ?>
     <div class="content no-projects-notice">
         <h1>Welcome to your nemex!</h1>
         <p>Get started and create a new project with the + Button above. You can upload images, create texts, edit and delete them and download the whole project as a single zip-file.
         </p>
     </div>
-<?php } else { ?>
-    <div class="content no-projects-warning">
-        <h1>No Project Directory!</h1>
-        <p>A <i><?php print CONFIG::PROJECTS_PATH ?></i> directory must exist, with permissions set to <i><?php print sprintf("%04o", CONFIG::FILE_CREATION_MODE); ?></i>.</p>
-    </div>
-<?php
-      }
-    } 
-?>
+<?php } ?>
 
 <div class="navigation">
     <a id="logoutButton" class="index" href="#">
