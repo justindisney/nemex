@@ -53,6 +53,7 @@ else {
 	}
 	else {
 		$projects = Project::getProjectList();
+                $dir_exists = Project::projectDirectoryExists();
 		include( NX_PATH.'media/templates/project-list.html.php');
 	}
 }

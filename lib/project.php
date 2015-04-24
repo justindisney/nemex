@@ -178,4 +178,8 @@ class Project {
 		krsort($projects);
 		return $projects;
 	}
+        
+        public static function projectDirectoryExists() {
+            return is_writable(CONFIG::PROJECTS_PATH);
+        }
 }
